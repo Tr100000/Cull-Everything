@@ -44,6 +44,8 @@ tasks.jar {
 }
 
 modrinth {
+    token.set("mrp_B3V1PoDdUB0GzmF3I1rs61FnnA46YM8ziyCqR7HulbuHPHZMFOHqxiBQE1Eg")
+    debugMode.set(true)
     projectId.set("cull-everything")
     versionNumber.set(project.version.toString())
     versionName.set(project.version.toString())
@@ -52,9 +54,8 @@ modrinth {
     changelog = rootProject.file("CHANGELOG.md").readText()
     syncBodyFrom = rootProject.file("README.md").readText()
 
-    gameVersions.add(providers.gradleProperty("minecraft_version").get())
     val extraCompatibleVersions = providers.gradleProperty("modrinth_extra_minecraft_versions").get()
-        .split(',');
+        .split(',').filter { it.isNotBlank() }
     extraCompatibleVersions.forEach { gameVersions.add(it.trim()) }
 }
 
