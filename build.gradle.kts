@@ -44,8 +44,6 @@ tasks.jar {
 }
 
 modrinth {
-    token.set("mrp_B3V1PoDdUB0GzmF3I1rs61FnnA46YM8ziyCqR7HulbuHPHZMFOHqxiBQE1Eg")
-    debugMode.set(true)
     projectId.set("cull-everything")
     versionNumber.set(project.version.toString())
     versionName.set(project.version.toString())
