@@ -52,6 +52,7 @@ modrinth {
     changelog = rootProject.file("CHANGELOG.md").readText()
     syncBodyFrom = rootProject.file("README.md").readText()
 
+    gameVersions.add(providers.gradleProperty("minecraft_version").get())
     val extraCompatibleVersions = providers.gradleProperty("modrinth_extra_minecraft_versions").get()
         .split(',');
     extraCompatibleVersions.forEach { gameVersions.add(it.trim()) }
