@@ -1,0 +1,16 @@
+package io.github.tr100000.culleverything.mixin;
+
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.renderer.Panorama;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@Mixin(Panorama.class)
+public abstract class PanoramaMixin {
+    @Inject(method = "extractRenderState", at = @At("HEAD"), cancellable = true)
+    private void dont(GuiGraphicsExtractor graphics, int width, int height, CallbackInfo ci) {
+        ci.cancel();
+    }
+}

@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "cull-everything",
+	"version": "${version}",
+	"name": "Cull Everything",
+	"description": "The ultimate rendering optimization mod for Minecraft",
+	"authors": [
+		"Tr100000"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/cull-everything/icon.png",
+	"environment": "client",
+	"mixins": [
+		"cull-everything.mixins.json"
+	],
+	"accessWidener": "cull-everything.classtweaker",
+	"depends": {
+		"fabricloader": ">=0.20",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	}
+}
