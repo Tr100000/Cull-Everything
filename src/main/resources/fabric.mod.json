@@ -8,14 +8,18 @@
 		"Tr100000"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/cull-everything",
+		"sources": "https://github.com/Tr100000/Cull-Everything",
+		"issues": "https://github.com/Tr100000/Cull-Everything/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/cull-everything/icon.png",
 	"environment": "client",
 	"mixins": [
-		"cull-everything.mixins.json"
+		{
+			"config": "cull-everything.mixins.json",
+			"environment": "client"
+		}
 	],
 	"accessWidener": "cull-everything.classtweaker",
 	"depends": {
